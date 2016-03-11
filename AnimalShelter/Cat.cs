@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AnimalShelter
+﻿namespace AnimalShelter
 {
     public class Cat : Animal
     {
@@ -14,6 +8,11 @@ namespace AnimalShelter
             : base(name, age, gender, isReserved)
         {
             BadHabit = badHabit;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + BadHabit;
         }
     }
 }

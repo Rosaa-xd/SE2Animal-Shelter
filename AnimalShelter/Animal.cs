@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AnimalShelter
+﻿namespace AnimalShelter
 {
     public enum Gender
     {
@@ -14,10 +8,10 @@ namespace AnimalShelter
 
     public class Animal
     {
-        public string Name { get; private set; }
-        public string Age { get; private set; }
-        public Gender Gender { get; private set; }
-        public string IsReserved { get; private set; } 
+        public string Name { get; }
+        public string Age { get; }
+        public Gender Gender { get; }
+        public string IsReserved { get; set; } 
 
         public Animal(string name, string age, Gender gender, string isReserved)
         {
@@ -25,6 +19,11 @@ namespace AnimalShelter
             Age = age;
             Gender = gender;
             IsReserved = isReserved;
+        }
+
+        public override string ToString()
+        {
+            return Name + " " + Age + " " + Gender + " " + IsReserved + " ";
         }
     }
 }
