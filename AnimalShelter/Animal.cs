@@ -6,7 +6,7 @@
         Female
     }
 
-    public class Animal
+    public abstract class Animal
     {
         public string Name { get; }
         public string Age { get; }
