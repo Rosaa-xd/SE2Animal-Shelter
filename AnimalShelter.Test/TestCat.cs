@@ -31,13 +31,13 @@ namespace AnimalShelter.Test
         public void CatTestToString()
         {
             // Arrange
-            Cat cat = new Cat("Harry", "17", Gender.Male, null, "Stinks");
+            Cat cat = new Cat("Harry", "17", Gender.Male, "Roos", "Stinks");
 
             // Act
             string catToString = cat.ToString();
 
             // Assert
-            Assert.AreEqual("Harry 17 Male Stinks", catToString);
+            Assert.AreEqual("Harry 17 Male Roos Stinks", catToString);
         }
     }
 }
