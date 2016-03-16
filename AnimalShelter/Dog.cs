@@ -15,7 +15,7 @@ namespace AnimalShelter
 
         public override string ToString()
         {
-            return base.ToString() + LastWalkDay;
+            return base.ToString() + LastWalkDay.ToString("dd-MM-yyyy");
         }
     }
 }
