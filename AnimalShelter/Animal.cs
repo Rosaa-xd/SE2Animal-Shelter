@@ -8,12 +8,12 @@
 
     public abstract class Animal
     {
-        public string Name { get; }
-        public string Age { get; }
-        public Gender Gender { get; }
+        public string Name { get; private set; }
+        public string Age { get; private set; }
+        public Gender Gender { get; private set; }
         public string IsReserved { get; set; } 
 
-        public Animal(string name, string age, Gender gender, string isReserved)
+        protected Animal(string name, string age, Gender gender, string isReserved)
         {
             Name = name;
             Age = age;
@@ -23,6 +23,10 @@
 
         public override string ToString()
         {
+            if (IsReserved == null)
+            {
+                return Name + " " + Age + " " + Gender + " ";
+            }
             return Name + " " + Age + " " + Gender + " " + IsReserved + " ";
         }
     }
