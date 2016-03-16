@@ -33,9 +33,6 @@
             this.lbl_AnimalBadHabit = new System.Windows.Forms.Label();
             this.dtp_LastWalkDate = new System.Windows.Forms.DateTimePicker();
             this.tb_BadHabit = new System.Windows.Forms.TextBox();
-            this.lbl_AnimalReserveAt = new System.Windows.Forms.Label();
-            this.lbl_AnimalReservedBy = new System.Windows.Forms.Label();
-            this.lbl_AnimalReserved = new System.Windows.Forms.Label();
             this.lbl_AnimalGender = new System.Windows.Forms.Label();
             this.lbl_Age = new System.Windows.Forms.Label();
             this.lbl_AnimalName = new System.Windows.Forms.Label();
@@ -57,9 +54,6 @@
             this.gb_Animal.Controls.Add(this.lbl_AnimalBadHabit);
             this.gb_Animal.Controls.Add(this.dtp_LastWalkDate);
             this.gb_Animal.Controls.Add(this.tb_BadHabit);
-            this.gb_Animal.Controls.Add(this.lbl_AnimalReserveAt);
-            this.gb_Animal.Controls.Add(this.lbl_AnimalReservedBy);
-            this.gb_Animal.Controls.Add(this.lbl_AnimalReserved);
             this.gb_Animal.Controls.Add(this.lbl_AnimalGender);
             this.gb_Animal.Controls.Add(this.lbl_Age);
             this.gb_Animal.Controls.Add(this.lbl_AnimalName);
@@ -108,33 +102,6 @@
             this.tb_BadHabit.Name = "tb_BadHabit";
             this.tb_BadHabit.Size = new System.Drawing.Size(121, 20);
             this.tb_BadHabit.TabIndex = 12;
-            // 
-            // lbl_AnimalReserveAt
-            // 
-            this.lbl_AnimalReserveAt.AutoSize = true;
-            this.lbl_AnimalReserveAt.Location = new System.Drawing.Point(88, 211);
-            this.lbl_AnimalReserveAt.Name = "lbl_AnimalReserveAt";
-            this.lbl_AnimalReserveAt.Size = new System.Drawing.Size(12, 13);
-            this.lbl_AnimalReserveAt.TabIndex = 11;
-            this.lbl_AnimalReserveAt.Text = "x";
-            // 
-            // lbl_AnimalReservedBy
-            // 
-            this.lbl_AnimalReservedBy.AutoSize = true;
-            this.lbl_AnimalReservedBy.Location = new System.Drawing.Point(88, 189);
-            this.lbl_AnimalReservedBy.Name = "lbl_AnimalReservedBy";
-            this.lbl_AnimalReservedBy.Size = new System.Drawing.Size(12, 13);
-            this.lbl_AnimalReservedBy.TabIndex = 10;
-            this.lbl_AnimalReservedBy.Text = "x";
-            // 
-            // lbl_AnimalReserved
-            // 
-            this.lbl_AnimalReserved.AutoSize = true;
-            this.lbl_AnimalReserved.Location = new System.Drawing.Point(9, 189);
-            this.lbl_AnimalReserved.Name = "lbl_AnimalReserved";
-            this.lbl_AnimalReserved.Size = new System.Drawing.Size(56, 13);
-            this.lbl_AnimalReserved.TabIndex = 9;
-            this.lbl_AnimalReserved.Text = "Reserved:";
             // 
             // lbl_AnimalGender
             // 
@@ -263,9 +230,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gb_Animal;
-        private System.Windows.Forms.Label lbl_AnimalReserveAt;
-        private System.Windows.Forms.Label lbl_AnimalReservedBy;
-        private System.Windows.Forms.Label lbl_AnimalReserved;
         private System.Windows.Forms.Label lbl_AnimalGender;
         private System.Windows.Forms.Label lbl_Age;
         private System.Windows.Forms.Label lbl_AnimalName;

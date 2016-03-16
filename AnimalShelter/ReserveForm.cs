@@ -7,7 +7,7 @@ namespace AnimalShelter
 {
     public partial class ReserveForm : Form
     {
-        private Animal animal;
+        private readonly Animal animal;
 
         public ReserveForm(Animal Animal)
         {
