@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace AnimalShelter
 {
     public partial class AdministrationForm : Form
     {
+        private List<Animal> animals; 
+
         public AdministrationForm()
         {
             InitializeComponent();
@@ -25,6 +28,7 @@ namespace AnimalShelter
                     null,
                     tb_BadHabit.Text);
                 lb_Animals.Items.Add(cat);
+                animals.Add(cat);
             }
             if (cb_AnimalType.SelectedItem.Equals("Dog"))
             {
@@ -34,6 +38,7 @@ namespace AnimalShelter
                     null,
                     dtp_LastWalkDate.Value);
                 lb_Animals.Items.Add(dog);
+                animals.Add(dog);
             }
 
             tb_AnimalName.Clear();
