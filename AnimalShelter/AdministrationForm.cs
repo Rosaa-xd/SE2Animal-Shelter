@@ -13,6 +13,12 @@ namespace AnimalShelter
             cb_AnimalType.Items.Add("Dog");
             cb_AnimalGender.Items.Add(Gender.Male);
             cb_AnimalGender.Items.Add(Gender.Female);
+            ShowData();
+        }
+
+        private void ShowData()
+        {
+            lb_Animals.DataSource = Webshop.animals;
         }
 
         private void btn_AddAnimal_Click(object sender, EventArgs e)
@@ -23,8 +29,9 @@ namespace AnimalShelter
                     tb_AnimalAge.Text,
                     (Gender) cb_AnimalGender.SelectedItem,
                     null,
+                    0,
                     tb_BadHabit.Text);
-                lb_Animals.Items.Add(cat);
+                Webshop.animals.Add(cat);
             }
             if (cb_AnimalType.SelectedItem.Equals("Dog"))
             {
@@ -32,30 +39,18 @@ namespace AnimalShelter
                     tb_AnimalAge.Text,
                     (Gender) cb_AnimalGender.SelectedItem,
                     null,
+                    0,
                     dtp_LastWalkDate.Value);
-                lb_Animals.Items.Add(dog);
+                Webshop.animals.Add(dog);
+                Webshop.dogs.Add(dog);
             }
 
+            //Clear all fields
             tb_AnimalName.Clear();
             tb_AnimalAge.Clear();
             tb_BadHabit.Clear();
+            cb_AnimalGender.SelectedIndex = -1;
         }
-
-
-        /*
-        private void btn_Shop_Click(object sender, EventArgs e)
-        {
-            Animal animal = (Animal) lb_Animals.SelectedItem;
-            if (animal.IsReserved != null)
-            {
-                MessageBox.Show("This one is already taken by " + animal.IsReserved);
-            }
-            else
-            {
-                WebShopForm reserveForm = new WebShopForm(animal);
-                reserveForm.Show();
-            }
-        }*/
 
         private void btn_ShowInfo_Click(object sender, EventArgs e)
         {
@@ -73,14 +68,23 @@ namespace AnimalShelter
 
         private void cb_AnimalType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Disables form parts not used in selected Animal Type
             if (cb_AnimalType.SelectedItem.Equals("Cat"))
             {
                 dtp_LastWalkDate.Enabled = false;
+                tb_BadHabit.Enabled = true;
             }
             if (cb_AnimalType.SelectedItem.Equals("Dog"))
             {
                 tb_BadHabit.Enabled = false;
+                dtp_LastWalkDate.Enabled = true;
             }
+        }
+
+        private void btn_Shop_Click(object sender, EventArgs e)
+        {
+            WebShopForm webShopForm = new WebShopForm();
+            webShopForm.Show();
         }
     }
 }

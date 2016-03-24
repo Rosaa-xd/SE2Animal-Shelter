@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.gb_Animal = new System.Windows.Forms.GroupBox();
+            this.btn_Shop = new System.Windows.Forms.Button();
             this.lbl_AnimalLastWalkDate = new System.Windows.Forms.Label();
             this.lbl_AnimalBadHabit = new System.Windows.Forms.Label();
+            this.btn_AddAnimal = new System.Windows.Forms.Button();
             this.dtp_LastWalkDate = new System.Windows.Forms.DateTimePicker();
             this.tb_BadHabit = new System.Windows.Forms.TextBox();
             this.lbl_AnimalGender = new System.Windows.Forms.Label();
@@ -42,9 +44,7 @@
             this.cb_AnimalType = new System.Windows.Forms.ComboBox();
             this.lbl_AnimalType = new System.Windows.Forms.Label();
             this.lb_Animals = new System.Windows.Forms.ListBox();
-            this.btn_AddAnimal = new System.Windows.Forms.Button();
             this.btn_ShowInfo = new System.Windows.Forms.Button();
-            this.btn_Shop = new System.Windows.Forms.Button();
             this.gb_Animal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,16 @@
             this.gb_Animal.TabStop = false;
             this.gb_Animal.Text = "Animal";
             // 
+            // btn_Shop
+            // 
+            this.btn_Shop.Location = new System.Drawing.Point(142, 189);
+            this.btn_Shop.Name = "btn_Shop";
+            this.btn_Shop.Size = new System.Drawing.Size(67, 39);
+            this.btn_Shop.TabIndex = 5;
+            this.btn_Shop.Text = "Shop";
+            this.btn_Shop.UseVisualStyleBackColor = true;
+            this.btn_Shop.Click += new System.EventHandler(this.btn_Shop_Click);
+            // 
             // lbl_AnimalLastWalkDate
             // 
             this.lbl_AnimalLastWalkDate.AutoSize = true;
@@ -89,6 +99,16 @@
             this.lbl_AnimalBadHabit.TabIndex = 14;
             this.lbl_AnimalBadHabit.Text = "Bad Habit:";
             // 
+            // btn_AddAnimal
+            // 
+            this.btn_AddAnimal.Location = new System.Drawing.Point(6, 189);
+            this.btn_AddAnimal.Name = "btn_AddAnimal";
+            this.btn_AddAnimal.Size = new System.Drawing.Size(67, 39);
+            this.btn_AddAnimal.TabIndex = 2;
+            this.btn_AddAnimal.Text = "Add";
+            this.btn_AddAnimal.UseVisualStyleBackColor = true;
+            this.btn_AddAnimal.Click += new System.EventHandler(this.btn_AddAnimal_Click);
+            // 
             // dtp_LastWalkDate
             // 
             this.dtp_LastWalkDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -96,7 +116,7 @@
             this.dtp_LastWalkDate.Name = "dtp_LastWalkDate";
             this.dtp_LastWalkDate.Size = new System.Drawing.Size(121, 20);
             this.dtp_LastWalkDate.TabIndex = 13;
-            this.dtp_LastWalkDate.Value = new System.DateTime(2016, 3, 11, 0, 0, 0, 0);
+            this.dtp_LastWalkDate.Value = new System.DateTime(2016, 3, 24, 0, 0, 0, 0);
             // 
             // tb_BadHabit
             // 
@@ -156,6 +176,7 @@
             // 
             // cb_AnimalType
             // 
+            this.cb_AnimalType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_AnimalType.FormattingEnabled = true;
             this.cb_AnimalType.Location = new System.Drawing.Point(88, 23);
             this.cb_AnimalType.Name = "cb_AnimalType";
@@ -180,16 +201,6 @@
             this.lb_Animals.Size = new System.Drawing.Size(160, 238);
             this.lb_Animals.TabIndex = 1;
             // 
-            // btn_AddAnimal
-            // 
-            this.btn_AddAnimal.Location = new System.Drawing.Point(6, 189);
-            this.btn_AddAnimal.Name = "btn_AddAnimal";
-            this.btn_AddAnimal.Size = new System.Drawing.Size(67, 39);
-            this.btn_AddAnimal.TabIndex = 2;
-            this.btn_AddAnimal.Text = "Add";
-            this.btn_AddAnimal.UseVisualStyleBackColor = true;
-            this.btn_AddAnimal.Click += new System.EventHandler(this.btn_AddAnimal_Click);
-            // 
             // btn_ShowInfo
             // 
             this.btn_ShowInfo.Location = new System.Drawing.Point(86, 202);
@@ -199,15 +210,6 @@
             this.btn_ShowInfo.Text = "Show Info";
             this.btn_ShowInfo.UseVisualStyleBackColor = true;
             this.btn_ShowInfo.Click += new System.EventHandler(this.btn_ShowInfo_Click);
-            // 
-            // btn_Shop
-            // 
-            this.btn_Shop.Location = new System.Drawing.Point(142, 189);
-            this.btn_Shop.Name = "btn_Shop";
-            this.btn_Shop.Size = new System.Drawing.Size(67, 39);
-            this.btn_Shop.TabIndex = 5;
-            this.btn_Shop.Text = "Shop";
-            this.btn_Shop.UseVisualStyleBackColor = true;
             // 
             // AdministrationForm
             // 
