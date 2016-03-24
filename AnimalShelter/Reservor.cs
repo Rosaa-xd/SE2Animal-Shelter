@@ -2,20 +2,14 @@
 
 namespace AnimalShelter
 {
-    public class Reservor
+    public class Reservor: Buyer
     {
-        public string Name { get; private set; }
         public DateTime ReservedAt { get; private set; }
 
         public Reservor(string name, DateTime reservedAt)
+            : base (name)
         {
-            Name = name;
             ReservedAt = reservedAt;
-        }
-
-        public override string ToString()
-        {
-            return Name;
         }
     }
 }
