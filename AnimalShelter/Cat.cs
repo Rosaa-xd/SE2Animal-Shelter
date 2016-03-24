@@ -4,8 +4,8 @@
     {
         public string BadHabit { get; private set; }
 
-        public Cat(string name, string age, Gender gender, string isReserved, string badHabit)
-            : base(name, age, gender, isReserved)
+        public Cat(string name, string age, Gender gender, string isReserved, decimal price, string badHabit)
+            : base(name, age, gender, isReserved, price)
         {
             BadHabit = badHabit;
         }

@@ -1,24 +1,20 @@
 ﻿namespace AnimalShelter
 {
-    public enum Gender
+    public abstract class Animal : ISellable
     {
-        Male,
-        Female
-    }
-
-    public abstract class Animal
-    {
-        public string Name { get; private set; }
+        public string Name { get; set; }
         public string Age { get; private set; }
         public Gender Gender { get; private set; }
-        public string IsReserved { get; set; } 
+        public string IsReserved { get; set; }
+        public decimal Price { get; set; }
 
-        protected Animal(string name, string age, Gender gender, string isReserved)
+        protected Animal(string name, string age, Gender gender, string isReserved, decimal price)
         {
             Name = name;
             Age = age;
             Gender = gender;
             IsReserved = isReserved;
+            Price = price;
         }
 
         public override string ToString()
