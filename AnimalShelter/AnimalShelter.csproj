@@ -51,15 +51,17 @@
       <DependentUpon>AdministrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Animal.cs" />
+    <Compile Include="Buyer.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
+    <Compile Include="ISellable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReserveForm.cs">
+    <Compile Include="WebShopForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReserveForm.Designer.cs">
-      <DependentUpon>ReserveForm.cs</DependentUpon>
+    <Compile Include="WebShopForm.Designer.cs">
+      <DependentUpon>WebShopForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reservor.cs" />
     <EmbeddedResource Include="AdministrationForm.resx">
@@ -74,8 +76,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReserveForm.resx">
-      <DependentUpon>ReserveForm.cs</DependentUpon>
+    <EmbeddedResource Include="WebShopForm.resx">
+      <DependentUpon>WebShopForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
