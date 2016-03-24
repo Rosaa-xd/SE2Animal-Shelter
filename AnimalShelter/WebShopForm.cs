@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace AnimalShelter
 {
-    public partial class ReserveForm : Form
+    public partial class WebShopForm : Form
     {
         private readonly Animal animal;
 
-        public ReserveForm(Animal Animal)
+        public WebShopForm(Animal Animal)
         {
             animal = Animal;
             InitializeComponent();
