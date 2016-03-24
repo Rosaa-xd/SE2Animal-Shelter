@@ -41,7 +41,9 @@ namespace AnimalShelter
             tb_BadHabit.Clear();
         }
 
-        private void btn_Reserve_Click(object sender, EventArgs e)
+
+        /*
+        private void btn_Shop_Click(object sender, EventArgs e)
         {
             Animal animal = (Animal) lb_Animals.SelectedItem;
             if (animal.IsReserved != null)
@@ -50,10 +52,10 @@ namespace AnimalShelter
             }
             else
             {
-                ReserveForm reserveForm = new ReserveForm(animal);
+                WebShopForm reserveForm = new WebShopForm(animal);
                 reserveForm.Show();
             }
-        }
+        }*/
 
         private void btn_ShowInfo_Click(object sender, EventArgs e)
         {
@@ -66,6 +68,18 @@ namespace AnimalShelter
             {
                 Dog dog = lb_Animals.SelectedItem as Dog;
                 MessageBox.Show(dog.ToString());
+            }
+        }
+
+        private void cb_AnimalType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_AnimalType.SelectedItem.Equals("Cat"))
+            {
+                dtp_LastWalkDate.Enabled = false;
+            }
+            if (cb_AnimalType.SelectedItem.Equals("Dog"))
+            {
+                tb_BadHabit.Enabled = false;
             }
         }
     }

@@ -43,15 +43,17 @@
             this.lbl_AnimalType = new System.Windows.Forms.Label();
             this.lb_Animals = new System.Windows.Forms.ListBox();
             this.btn_AddAnimal = new System.Windows.Forms.Button();
-            this.btn_Reserve = new System.Windows.Forms.Button();
             this.btn_ShowInfo = new System.Windows.Forms.Button();
+            this.btn_Shop = new System.Windows.Forms.Button();
             this.gb_Animal.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_Animal
             // 
+            this.gb_Animal.Controls.Add(this.btn_Shop);
             this.gb_Animal.Controls.Add(this.lbl_AnimalLastWalkDate);
             this.gb_Animal.Controls.Add(this.lbl_AnimalBadHabit);
+            this.gb_Animal.Controls.Add(this.btn_AddAnimal);
             this.gb_Animal.Controls.Add(this.dtp_LastWalkDate);
             this.gb_Animal.Controls.Add(this.tb_BadHabit);
             this.gb_Animal.Controls.Add(this.lbl_AnimalGender);
@@ -64,7 +66,7 @@
             this.gb_Animal.Controls.Add(this.lbl_AnimalType);
             this.gb_Animal.Location = new System.Drawing.Point(13, 13);
             this.gb_Animal.Name = "gb_Animal";
-            this.gb_Animal.Size = new System.Drawing.Size(215, 232);
+            this.gb_Animal.Size = new System.Drawing.Size(215, 237);
             this.gb_Animal.TabIndex = 0;
             this.gb_Animal.TabStop = false;
             this.gb_Animal.Text = "Animal";
@@ -159,6 +161,7 @@
             this.cb_AnimalType.Name = "cb_AnimalType";
             this.cb_AnimalType.Size = new System.Drawing.Size(121, 21);
             this.cb_AnimalType.TabIndex = 1;
+            this.cb_AnimalType.SelectedIndexChanged += new System.EventHandler(this.cb_AnimalType_SelectedIndexChanged);
             // 
             // lbl_AnimalType
             // 
@@ -171,17 +174,15 @@
             // 
             // lb_Animals
             // 
-            this.lb_Animals.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Animals.FormattingEnabled = true;
             this.lb_Animals.Location = new System.Drawing.Point(235, 13);
             this.lb_Animals.Name = "lb_Animals";
-            this.lb_Animals.Size = new System.Drawing.Size(179, 277);
+            this.lb_Animals.Size = new System.Drawing.Size(160, 238);
             this.lb_Animals.TabIndex = 1;
             // 
             // btn_AddAnimal
             // 
-            this.btn_AddAnimal.Location = new System.Drawing.Point(13, 253);
+            this.btn_AddAnimal.Location = new System.Drawing.Point(6, 189);
             this.btn_AddAnimal.Name = "btn_AddAnimal";
             this.btn_AddAnimal.Size = new System.Drawing.Size(67, 39);
             this.btn_AddAnimal.TabIndex = 2;
@@ -189,19 +190,9 @@
             this.btn_AddAnimal.UseVisualStyleBackColor = true;
             this.btn_AddAnimal.Click += new System.EventHandler(this.btn_AddAnimal_Click);
             // 
-            // btn_Reserve
-            // 
-            this.btn_Reserve.Location = new System.Drawing.Point(161, 253);
-            this.btn_Reserve.Name = "btn_Reserve";
-            this.btn_Reserve.Size = new System.Drawing.Size(68, 39);
-            this.btn_Reserve.TabIndex = 3;
-            this.btn_Reserve.Text = "Reserve";
-            this.btn_Reserve.UseVisualStyleBackColor = true;
-            this.btn_Reserve.Click += new System.EventHandler(this.btn_Reserve_Click);
-            // 
             // btn_ShowInfo
             // 
-            this.btn_ShowInfo.Location = new System.Drawing.Point(88, 253);
+            this.btn_ShowInfo.Location = new System.Drawing.Point(86, 202);
             this.btn_ShowInfo.Name = "btn_ShowInfo";
             this.btn_ShowInfo.Size = new System.Drawing.Size(67, 39);
             this.btn_ShowInfo.TabIndex = 4;
@@ -209,14 +200,21 @@
             this.btn_ShowInfo.UseVisualStyleBackColor = true;
             this.btn_ShowInfo.Click += new System.EventHandler(this.btn_ShowInfo_Click);
             // 
+            // btn_Shop
+            // 
+            this.btn_Shop.Location = new System.Drawing.Point(142, 189);
+            this.btn_Shop.Name = "btn_Shop";
+            this.btn_Shop.Size = new System.Drawing.Size(67, 39);
+            this.btn_Shop.TabIndex = 5;
+            this.btn_Shop.Text = "Shop";
+            this.btn_Shop.UseVisualStyleBackColor = true;
+            // 
             // AdministrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 304);
+            this.ClientSize = new System.Drawing.Size(412, 261);
             this.Controls.Add(this.btn_ShowInfo);
-            this.Controls.Add(this.btn_Reserve);
-            this.Controls.Add(this.btn_AddAnimal);
             this.Controls.Add(this.lb_Animals);
             this.Controls.Add(this.gb_Animal);
             this.Name = "AdministrationForm";
@@ -240,12 +238,12 @@
         private System.Windows.Forms.Label lbl_AnimalType;
         private System.Windows.Forms.ListBox lb_Animals;
         private System.Windows.Forms.Button btn_AddAnimal;
-        private System.Windows.Forms.Button btn_Reserve;
         private System.Windows.Forms.Label lbl_AnimalLastWalkDate;
         private System.Windows.Forms.Label lbl_AnimalBadHabit;
         private System.Windows.Forms.DateTimePicker dtp_LastWalkDate;
         private System.Windows.Forms.TextBox tb_BadHabit;
         private System.Windows.Forms.Button btn_ShowInfo;
+        private System.Windows.Forms.Button btn_Shop;
     }
 }
 
