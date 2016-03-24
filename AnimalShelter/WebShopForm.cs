@@ -13,6 +13,7 @@ namespace AnimalShelter
 
         private void ShowData()
         {
+            //Inserts BindingLists into components
             lb_Products.DataSource = Webshop.products;
             lb_Animals.DataSource = Webshop.animals;
             cb_AnimalBuyers.DataSource = Webshop.buyers;
