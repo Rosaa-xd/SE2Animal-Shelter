@@ -1,0 +1,29 @@
+[
+  {
+    "Name": "Harry",
+    "Age": "10",
+    "Gender": "Male",
+    "IsReserved": "",
+    "Price": 230.0,
+    "Type": "Cat",
+    "BadHabit": "Stinks"
+  },
+  {
+    "Name": "Marlyn",
+    "Age": "5",
+    "Gender": "Female",
+    "IsReserved": "",
+    "Price": 500.0,
+    "Type": "Dog",
+    "LastWalkDay": "2016-04-02T00:00:00"
+  },
+  {
+    "Name": "Bernard",
+    "Age": "4",
+    "Gender": "Male",
+    "IsReserved": "",
+    "Price": 270.0,
+    "Type": "Cat",
+    "BadHabit": "Blub"
+  }
+]

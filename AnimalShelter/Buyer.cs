@@ -2,7 +2,7 @@
 {
     public class Buyer
     {
-        public string Name { get; private set; }
+        public string Name { get; }
 
         public Buyer(string name)
         {

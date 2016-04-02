@@ -93,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="WebShopForm.resx">
       <DependentUpon>WebShopForm.cs</DependentUpon>
@@ -107,6 +108,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Animal.json" />
+    <None Include="Resources\Product.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

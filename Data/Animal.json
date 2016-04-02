@@ -3,7 +3,7 @@
     "Name": "Harry",
     "Age": "10",
     "Gender": "Male",
-    "IsReserved": "",
+    "IsReserved": null,
     "Price": 230.0,
     "Type": "Cat",
     "BadHabit": "Stinks"
@@ -12,18 +12,27 @@
     "Name": "Marlyn",
     "Age": "5",
     "Gender": "Female",
-    "IsReserved": "",
-    "Price": 500.0,
+    "IsReserved": null,
+    "Price": 400.0,
     "Type": "Dog",
     "LastWalkDay": "2016-04-02T00:00:00"
   },
   {
-    "Name": "Bernard",
-    "Age": "4",
+    "Name": "Henri",
+    "Age": "5",
     "Gender": "Male",
-    "IsReserved": "",
-    "Price": 270.0,
-    "Type": "Cat",
-    "BadHabit": "Blub"
+    "IsReserved": null,
+    "Price": 450.0,
+    "Type": "Dog",
+    "LastWalkDay": "2016-04-02T00:00:00"
+  },
+  {
+    "Name": "Mark",
+    "Age": "2",
+    "Gender": "Male",
+    "IsReserved": null,
+    "Price": 500.0,
+    "Type": "Dog",
+    "LastWalkDay": "2016-04-02T00:00:00"
   }
 ]

@@ -47,6 +47,7 @@
             this.tb_BuyerName = new System.Windows.Forms.TextBox();
             this.lbl_BuyerName = new System.Windows.Forms.Label();
             this.lb_Products = new System.Windows.Forms.ListBox();
+            this.btn_DeleteProduct = new System.Windows.Forms.Button();
             this.gb_animals.SuspendLayout();
             this.gb_Products.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +155,7 @@
             // 
             // gb_Products
             // 
+            this.gb_Products.Controls.Add(this.btn_DeleteProduct);
             this.gb_Products.Controls.Add(this.btn_AddProduct);
             this.gb_Products.Controls.Add(this.btn_BuyProduct);
             this.gb_Products.Controls.Add(this.lbl_ShowProductPrice);
@@ -242,6 +244,16 @@
             this.lb_Products.TabIndex = 0;
             this.lb_Products.SelectedIndexChanged += new System.EventHandler(this.lb_Products_SelectedIndexChanged);
             // 
+            // btn_DeleteProduct
+            // 
+            this.btn_DeleteProduct.Location = new System.Drawing.Point(86, 152);
+            this.btn_DeleteProduct.Name = "btn_DeleteProduct";
+            this.btn_DeleteProduct.Size = new System.Drawing.Size(67, 39);
+            this.btn_DeleteProduct.TabIndex = 9;
+            this.btn_DeleteProduct.Text = "Delete";
+            this.btn_DeleteProduct.UseVisualStyleBackColor = true;
+            this.btn_DeleteProduct.Click += new System.EventHandler(this.btn_DeleteProduct_Click);
+            // 
             // WebShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +292,6 @@
         private System.Windows.Forms.Button btn_BuyProduct;
         private System.Windows.Forms.Button btn_ReserveAnimal;
         private System.Windows.Forms.Button btn_ReturnToAdminForm;
-
+        private System.Windows.Forms.Button btn_DeleteProduct;
     }
 }

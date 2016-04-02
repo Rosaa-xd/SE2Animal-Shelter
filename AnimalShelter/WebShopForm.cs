@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace AnimalShelter
@@ -8,6 +10,7 @@ namespace AnimalShelter
         public WebShopForm()
         {
             InitializeComponent();
+            
             ShowData();
         }
 
@@ -28,21 +31,29 @@ namespace AnimalShelter
 
         private void btn_BuyProduct_Click(object sender, EventArgs e)
         {
-            Buyer buyer;
-            if (cb_ProductBuyers.SelectedItem != null)
+            //Making sure there is a buyer registered
+            if (cb_ProductBuyers.SelectedIndex == -1 & tb_BuyerName.Text == "")
             {
-                buyer = (Buyer) cb_ProductBuyers.SelectedItem;
+                MessageBox.Show("Whoops! We're sorry to tell you, but you cannot buy a product with registering");
             }
             else
             {
-                buyer = new Buyer(tb_BuyerName.Text);
-                Webshop.buyers.Add(buyer);
-            }
-            Product product = (Product)lb_Products.SelectedItem;
+                Buyer buyer;
+                if (cb_ProductBuyers.SelectedItem != null)
+                {
+                    buyer = (Buyer)cb_ProductBuyers.SelectedItem;
+                }
+                else
+                {
+                    buyer = new Buyer(tb_BuyerName.Text);
+                    Webshop.buyers.Add(buyer);
+                }
+                Product product = (Product)lb_Products.SelectedItem;
 
-            MessageBox.Show(buyer.Name + ", you have bought a " + product.Name +
-                            "! We hope you enjoy your purchase.");
-            cb_ProductBuyers.SelectedIndex = -1;
+                MessageBox.Show(buyer.Name + ", you have bought a " + product.Name +
+                                "! We hope you enjoy your purchase.");
+                cb_ProductBuyers.SelectedIndex = -1;
+            }
         }
 
         private void lb_Products_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,63 +64,79 @@ namespace AnimalShelter
 
         private void btn_ReserveAnimal_Click(object sender, EventArgs e)
         {
-            Animal animal = (Animal) lb_Animals.SelectedItem;
-
-            //Making sure animal isn't already reserved
-            if (animal.IsReserved != null)
+            //Making sure there is a Reservor registered
+            if (cb_AnimalBuyers.SelectedIndex == -1 && tb_ReservorName.Text == "")
             {
-                MessageBox.Show("Whoops! We're sorry to tell you, but " + animal.Name +
-                                " has already been taken by " + animal.IsReserved);
+                MessageBox.Show("Whoops! We're sorry to tell you, but you cannot reserve an animal without registring");
             }
-
             else
             {
-                Reservor reservor;
-                if (cb_AnimalBuyers.SelectedItem != null)
+                Animal animal = (Animal)lb_Animals.SelectedItem;
+
+                //Making sure animal isn't already reserved
+                if (animal.IsReserved != null)
                 {
-                    reservor = new Reservor(cb_AnimalBuyers.SelectedItem.ToString(), DateTime.Now);
+                    MessageBox.Show("Whoops! We're sorry to tell you, but " + animal.Name +
+                                    " has already been taken by " + animal.IsReserved);
                 }
+
                 else
                 {
-                    reservor = new Reservor(tb_ReservorName.Text, DateTime.Now);
-                    Webshop.buyers.Add(reservor);
+                    Reservor reservor;
+                    if (cb_AnimalBuyers.SelectedItem != null)
+                    {
+                        reservor = new Reservor(cb_AnimalBuyers.SelectedItem.ToString(), DateTime.Now);
+                    }
+                    else
+                    {
+                        reservor = new Reservor(tb_ReservorName.Text, DateTime.Now);
+                        Webshop.buyers.Add(reservor);
+                    }
+
+                    animal.IsReserved = reservor.Name;
+                    MessageBox.Show("Congratulations " + reservor.Name + "! You have reserved " + animal.Name + "!");
                 }
-                
-                animal.IsReserved = reservor.Name;
-                MessageBox.Show("Congratulations " + reservor.Name + "! You have reserved " + animal.Name + "!");
+                cb_AnimalBuyers.SelectedIndex = -1;
+                cb_ProductBuyers.SelectedIndex = -1;
             }
-            cb_AnimalBuyers.SelectedIndex = -1;
-            cb_ProductBuyers.SelectedIndex = -1;
         }
 
         private void btn_BuyAnimal_Click(object sender, EventArgs e)
         {
-            Animal animal = (Animal) lb_Animals.SelectedItem;
-
-            //Making sure animal isn't already reserved
-            if (animal.IsReserved != null)
+            //Making sure there is a Buyer registered
+            if (cb_AnimalBuyers.SelectedIndex == -1 && tb_ReservorName.Text == "")
             {
-                MessageBox.Show("Whoops! We're sorry to tell you, but " + animal.Name +
-                                " has already been taken by " + animal.IsReserved);
+                MessageBox.Show("Whoops! We're sorry to tell you, but you cannot buy an animal without registring");
             }
             else
             {
-                Buyer buyer;
-                if (cb_AnimalBuyers.SelectedItem != null)
+                Animal animal = (Animal)lb_Animals.SelectedItem;
+
+                //Making sure animal isn't already reserved
+                if (animal.IsReserved != null)
                 {
-                    buyer = (Buyer) cb_AnimalBuyers.SelectedItem;
+                    MessageBox.Show("Whoops! We're sorry to tell you, but " + animal.Name +
+                                    " has already been taken by " + animal.IsReserved);
                 }
                 else
                 {
-                    buyer = new Buyer(tb_ReservorName.Text);
-                }
+                    Buyer buyer;
+                    if (cb_AnimalBuyers.SelectedItem != null)
+                    {
+                        buyer = (Buyer)cb_AnimalBuyers.SelectedItem;
+                    }
+                    else
+                    {
+                        buyer = new Buyer(tb_ReservorName.Text);
+                    }
 
-                Webshop.animals.Remove(animal);
-                MessageBox.Show("Congratulations " + buyer.Name + "! You have bought " + animal.Name +
-                                "! We hope you will have much joy with your new little buddy!");
+                    Webshop.animals.Remove(animal);
+                    MessageBox.Show("Congratulations " + buyer.Name + "! You have bought " + animal.Name +
+                                    "! We hope you will have much joy with your new little buddy!");
+                }
+                cb_AnimalBuyers.SelectedIndex = -1;
+                cb_ProductBuyers.SelectedIndex = -1;
             }
-            cb_AnimalBuyers.SelectedIndex = -1;
-            cb_ProductBuyers.SelectedIndex = -1;
         }
 
         private void btn_ReturnToAdminForm_Click(object sender, EventArgs e)
@@ -123,7 +150,7 @@ namespace AnimalShelter
             if (lb_Animals.SelectedItem is Cat)
             {
                 Cat cat = lb_Animals.SelectedItem as Cat;
-                if (cat.Price <= 35)
+                if (cat.Price >= 35)
                 {
                     animalPrice = 350 - (cat.BadHabit.Length * 20);
                     cat.Price = animalPrice;
@@ -132,7 +159,7 @@ namespace AnimalShelter
             if (lb_Animals.SelectedItem is Dog)
             {
                 Dog dog = lb_Animals.SelectedItem as Dog;
-                if (dog.Price <= 50)
+                if (dog.Price >= 50)
                 {
                     animalPrice = 500 - ((Webshop.dogs.Count - Webshop.dogs.IndexOf(dog) - 1) * 50);
                     dog.Price = animalPrice;
@@ -140,6 +167,12 @@ namespace AnimalShelter
             }
             Animal animal = (Animal)lb_Animals.SelectedItem;
             lbl_ShowAnimalPrice.Text = animal.Price.ToString();
+        }
+
+        private void btn_DeleteProduct_Click(object sender, EventArgs e)
+        {
+            Product product = (Product) lb_Products.SelectedItem;
+            Webshop.products.Remove(product);
         }
     }
 }
