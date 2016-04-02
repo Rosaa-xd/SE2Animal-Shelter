@@ -10,7 +10,7 @@ namespace AnimalShelter.Test
         public void DogTestConstructor()
         {
             // Arrange
-            Dog dog = new Dog("Bobby", "4", Gender.Male, null, new DateTime(2016, 3, 16));
+            Dog dog = new Dog("Bobby", "4", Gender.Male, null,0, new DateTime(2016, 3, 16));
             
             // Act
             string dogName = dog.Name;
@@ -31,7 +31,7 @@ namespace AnimalShelter.Test
         public void DogTestToString()
         {
             // Arrange
-            Dog dog = new Dog("Bobby", "4", Gender.Male, null, new DateTime(2016, 3, 16));
+            Dog dog = new Dog("Bobby", "4", Gender.Male, null,0, new DateTime(2016, 3, 16));
 
             // Act
             string dogToString = dog.ToString();

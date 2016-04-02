@@ -1,13 +1,23 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
 using System.Windows.Forms;
 
 namespace AnimalShelter
 {
     public partial class AdministrationForm : Form
     {
+        //Defining file path
+        private static string filePath =
+            @"C:\Users\Marie-Rose\Dropbox\Fontys\Feb 2016 - Jul 2016\Semester 2\Software\Opdrachten\SE2Animal-Shelter\Data\Animal.json";
+
+
         public AdministrationForm()
         {
             InitializeComponent();
+
+            GetData();
 
             cb_AnimalType.Items.Add("Cat");
             cb_AnimalType.Items.Add("Dog");
@@ -85,6 +95,34 @@ namespace AnimalShelter
         {
             WebShopForm webShopForm = new WebShopForm();
             webShopForm.Show();
+        }
+
+        private void AdministrationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            using (var writer = new StreamWriter(filePath))
+            {
+                string json = JsonHelper.ListToJson(Webshop.animals);
+                writer.WriteLine(json);
+                writer.Flush();
+            }
+        }
+
+        private void GetData()
+        {
+            using (var reader = new StreamReader(filePath))
+            {
+                StringBuilder sb = new StringBuilder();
+                string line = "";
+                while ((line = reader.ReadLine()) != null)
+                {
+                    sb.Append(line);
+                }
+                Webshop.animals.Clear();
+                foreach (Animal animal in JsonHelper.JsonToList(sb.ToString()))
+                {
+                    Webshop.animals.Add(animal);
+                }
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace AnimalShelter
+﻿using System.Runtime.Serialization;
+
+namespace AnimalShelter
 {
     public class Cat : Animal
     {

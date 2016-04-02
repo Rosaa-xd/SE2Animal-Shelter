@@ -10,7 +10,7 @@ namespace AnimalShelter.Test
         public void CatTestConstructor()
         {
             // Arrange
-            Cat cat = new Cat("Gabby", "15", Gender.Female, null, null);
+            Cat cat = new Cat("Gabby", "15", Gender.Female, null, 0, null);
 
             // Act
             string catName = cat.Name;
@@ -31,7 +31,7 @@ namespace AnimalShelter.Test
         public void CatTestToString()
         {
             // Arrange
-            Cat cat = new Cat("Harry", "17", Gender.Male, "Roos", "Stinks");
+            Cat cat = new Cat("Harry", "17", Gender.Male, "Roos", 0, "Stinks");
 
             // Act
             string catToString = cat.ToString();

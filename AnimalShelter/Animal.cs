@@ -1,10 +1,16 @@
-﻿namespace AnimalShelter
+﻿using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+
+namespace AnimalShelter
 {
     public abstract class Animal : ISellable
     {
         public string Name { get; set; }
-        public string Age { get; private set; }
-        public Gender Gender { get; private set; }
+        public string Age { get; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Gender Gender { get; }
         public string IsReserved { get; set; }
         public decimal Price { get; set; }
 

@@ -221,6 +221,7 @@
             this.Controls.Add(this.gb_Animal);
             this.Name = "AdministrationForm";
             this.Text = "The Doozies Administration";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdministrationForm_FormClosed);
             this.gb_Animal.ResumeLayout(false);
             this.gb_Animal.PerformLayout();
             this.ResumeLayout(false);

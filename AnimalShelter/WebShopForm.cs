@@ -123,14 +123,20 @@ namespace AnimalShelter
             if (lb_Animals.SelectedItem is Cat)
             {
                 Cat cat = lb_Animals.SelectedItem as Cat;
-                animalPrice = 350 - (cat.BadHabit.Length*20);
-                cat.Price = animalPrice;
+                if (cat.Price <= 35)
+                {
+                    animalPrice = 350 - (cat.BadHabit.Length * 20);
+                    cat.Price = animalPrice;
+                }
             }
             if (lb_Animals.SelectedItem is Dog)
             {
                 Dog dog = lb_Animals.SelectedItem as Dog;
-                animalPrice = 500 - ((Webshop.dogs.Count - Webshop.dogs.IndexOf(dog) - 1) *50);
-                dog.Price = animalPrice;
+                if (dog.Price <= 50)
+                {
+                    animalPrice = 500 - ((Webshop.dogs.Count - Webshop.dogs.IndexOf(dog) - 1) * 50);
+                    dog.Price = animalPrice;
+                }
             }
             Animal animal = (Animal)lb_Animals.SelectedItem;
             lbl_ShowAnimalPrice.Text = animal.Price.ToString();
